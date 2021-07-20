@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class Slot : MonoBehaviour, IDropHandler
 {
-
+    DanceMoveCard card = null;
 
     public void OnDrop(PointerEventData eventData)
     {
