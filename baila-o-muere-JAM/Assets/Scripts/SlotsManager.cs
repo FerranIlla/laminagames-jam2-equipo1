@@ -46,4 +46,12 @@ public class SlotsManager : MonoBehaviour
         }
         danceButton.gameObject.SetActive(allSlotsFilled);
     }
+
+    public void ResetAllSlots()
+    {
+        foreach(Slot s in slotsList)
+        {
+            s.ResetSlot();
+        }
+    }
 }

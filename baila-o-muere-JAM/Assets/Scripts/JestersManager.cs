@@ -14,15 +14,16 @@ public class JestersManager : MonoBehaviour
     void Awake()
     {
         FillJestersList();
+        GetComponent<GameManager>().tries = jestersList.Count;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            KillCandidate();
-        }
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    KillCandidate();
+        //}
     }
 
     private void FillJestersList()
@@ -41,9 +42,10 @@ public class JestersManager : MonoBehaviour
 
         //remove from list
         jestersList.Remove(jesterCandidate);
+        GetComponent<GameManager>().tries = jestersList.Count;
 
         //set next candidate
-        if(jestersList.Count>0)
+        if (jestersList.Count>0)
         {
             jesterCandidate = jestersList[0]; //maybe set random
         }

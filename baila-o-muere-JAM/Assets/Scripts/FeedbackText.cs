@@ -6,6 +6,7 @@ using UnityEngine;
 public class FeedbackText : MonoBehaviour
 {
     TMP_Text text;
+    [SerializeField] private float feedbackDuration = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class FeedbackText : MonoBehaviour
     {
         transform.GetChild(0).gameObject.SetActive(true); //panel
         transform.GetChild(1).gameObject.SetActive(true); //text
+        Invoke("HideFeedbackText", feedbackDuration);
     }
 
     public void HideFeedbackText()
@@ -41,16 +43,16 @@ public class FeedbackText : MonoBehaviour
             switch (randomSentence)
             {
                 case 0:
-                    generateSentence = "I only liked * of those 5 moves.\n\nBad luck... NEXT!";
+                    generateSentence = "I only liked * of those 5 moves.\nBad luck... NEXT!";
                     break;
                 case 1:
-                    generateSentence = "Too bad! Only * moves of your performance satisfied me.\n\nGoodbye...";
+                    generateSentence = "Too bad! Only * moves of your performance satisfied me.\nGoodbye...";
                     break;
                 case 2:
-                    generateSentence = "I liked * out of 5 of your moves.\n\nAnd that's not enough!";
+                    generateSentence = "I liked * out of 5 of your moves.\nAnd that's not enough!";
                     break;
                 case 3:
-                    generateSentence = "Not even close! * moves out of 5.\n\nTry a little harder...";
+                    generateSentence = "Not even close! * moves out of 5.\nTry a little harder...";
                     break;
             }
 

@@ -39,16 +39,16 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerDownHandler
 
     void DebugCardSelected(int numberToShow)
     {
-        transform.GetChild(0).GetComponent<Text>().text = numberToShow.ToString();
+        transform.GetChild(2).GetComponent<Text>().text = numberToShow.ToString();
     }
 
     void ResetCardDisplay()
     {
         //Debug with normal text
-        if (cardSelectedIndex == -1) transform.GetChild(0).GetComponent<Text>().text = "";
+        if (cardSelectedIndex == -1) transform.GetChild(2).GetComponent<Text>().text = "";
         else
         {
-            transform.GetChild(0).GetComponent<Text>().text = cardsManager.cardsList[cardSelectedIndex].move.DebugNumber.ToString();
+            transform.GetChild(2).GetComponent<Text>().text = cardsManager.cardsList[cardSelectedIndex].move.DebugNumber.ToString();
         }
 
         //Game
@@ -56,10 +56,15 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        ResetSlot();
+    }
+
+    public void ResetSlot()
+    {
         if (cardSelectedIndex != -1)
         {
             //Debug.Log("OnPointerDown in Slot");
-            
+
 
             //show card
             cardsManager.cardsList[cardSelectedIndex].SetCardVisibility(true);
