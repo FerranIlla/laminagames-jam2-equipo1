@@ -140,12 +140,12 @@ public class GameManager : MonoBehaviour
 
         if (correctAnswers == password.Count)
         {
-            Debug.Log("Correct");
+            //Debug.Log("Correct");
             winPanel.SetActive(true);
         }
         else
         {
-            Debug.Log("Wrong");
+            //Debug.Log("Wrong");
             slotsManager.ResetAllSlots();
             jestersManager.KillCandidate(); //tries -1
 

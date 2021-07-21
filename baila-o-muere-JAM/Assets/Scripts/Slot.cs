@@ -22,18 +22,21 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerDownHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        DanceMove danceMoveDropped = eventData.pointerDrag.GetComponent<DanceMoveCard>().move;
+        if (cardSelectedIndex == -1)
+        {
+            DanceMove danceMoveDropped = eventData.pointerDrag.GetComponent<DanceMoveCard>().move;
 
-        //card animation
-        //set move by card dragged
-        cardSelectedIndex = eventData.pointerDrag.GetComponent<DanceMoveCard>().positionInList;
-        DebugCardSelected(danceMoveDropped.DebugNumber);
+            //card animation
+            //set move by card dragged
+            cardSelectedIndex = eventData.pointerDrag.GetComponent<DanceMoveCard>().positionInList;
+            DebugCardSelected(danceMoveDropped.DebugNumber);
 
-        //hide card dragged
-        eventData.pointerDrag.GetComponent<DanceMoveCard>().SetCardVisibility(false);
-        eventData.pointerDrag.GetComponent<DanceMoveCard>().ResetCardPosition();
+            //hide card dragged
+            eventData.pointerDrag.GetComponent<DanceMoveCard>().SetCardVisibility(false);
+            eventData.pointerDrag.GetComponent<DanceMoveCard>().ResetCardPosition();
 
-        slotsManager.CheckIfAllSlotsFilled();
+            slotsManager.CheckIfAllSlotsFilled();
+        }
     }
 
 
