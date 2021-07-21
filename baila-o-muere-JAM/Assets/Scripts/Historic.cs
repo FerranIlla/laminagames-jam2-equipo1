@@ -8,6 +8,8 @@ public class Historic : MonoBehaviour
     [SerializeField] private GameObject elementPrefab;
     [SerializeField] private Transform elementsParent;
 
+    public List<Sprite> cardsImages = new List<Sprite>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +26,14 @@ public class Historic : MonoBehaviour
     {
         GameObject elementObj = Instantiate(elementPrefab, elementsParent);
         //set element position (RectTransform maybe)
+        elementObj.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,-70*elements.Count);
 
-        HistoricElement element = new HistoricElement(correctAnswers, comb);
+        HistoricElement element = elementObj.AddComponent<HistoricElement>(); //as HistoricElement;
+        element.Initialize(correctAnswers, comb);
+        elements.Add(element);
+        element.DisplayInfo();
+
+        //HistoricElement element = new HistoricElement(correctAnswers, comb);
 
     }
 }

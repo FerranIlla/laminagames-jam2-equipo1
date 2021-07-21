@@ -20,10 +20,7 @@ public class JestersManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    KillCandidate();
-        //}
+        
     }
 
     private void FillJestersList()

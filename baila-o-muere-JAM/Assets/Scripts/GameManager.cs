@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
         queenFeedbackScript.SetQueenSentence(correctAnswers);
         queenFeedbackScript.ShowFeedbackText();
         //add to historic
-        //historic.CreateAndAddHistoricElement(correctAnswers, currentCombination);
+        historic.CreateAndAddHistoricElement(correctAnswers, currentCombination);
 
         if (correctAnswers == password.Count)
         {
