@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DanceMoveCard : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
 {
+    [SerializeField] private DanceMoveTypes type;
+    [SerializeField] private string danceName;
     public DanceMove move;
-    private bool isInteracting = false;
     private RectTransform rectTransform;
     Vector3 startingLocalPosition;
     private CanvasGroup canvasGroup;
+    [HideInInspector] public int positionInList;
 
 
     private void Awake()
@@ -17,6 +20,9 @@ public class DanceMoveCard : MonoBehaviour, IPointerDownHandler, IDragHandler, I
         rectTransform = GetComponent<RectTransform>();
         startingLocalPosition = transform.localPosition;
         canvasGroup = GetComponent<CanvasGroup>();
+
+        //contruct DanceMove class
+        move = new DanceMove(danceName, (int)type);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -42,19 +48,38 @@ public class DanceMoveCard : MonoBehaviour, IPointerDownHandler, IDragHandler, I
     {
         //show animation
         //make bigger the card
+        //Debug.Log("OnPointerEnter");
     }
     
     public void OnPointerExit(PointerEventData eventData)
     {
         //stop animation
         //make smaller the card
+        //Debug.Log("OnPointerExit");
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("OnPointerUp from Card");
-        transform.localPosition = startingLocalPosition;
+        ResetCard();
+    }
+
+    public void ResetCard()
+    {
+        ResetCardPosition();
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
     }
+
+    public void ResetCardPosition()
+    {
+        transform.localPosition = startingLocalPosition;
+    }
+
+    public void SetCardVisibility(bool visible)
+    {
+        GetComponent<Image>().enabled = visible; //card contour image
+        transform.GetChild(0).gameObject.SetActive(visible); //dance move img display and debug text
+
+    }
+    
 }

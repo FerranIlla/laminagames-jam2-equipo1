@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Card
   - Slot
+  - ListsManager
   layers:
   - Default
   - TransparentFX

@@ -4,13 +4,20 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour, IDropHandler
+public class Slot : MonoBehaviour, IDropHandler, IPointerDownHandler
 {
-    DanceMoveTypes? moveSelected;
+    [HideInInspector] public int cardSelectedIndex = -1;
+    GameObject managers;
+    SlotsManager slotsManager;
+    CardsManager cardsManager;
+    [HideInInspector] public int positionInList;
 
     void Awake()
     {
         ResetCardDisplay();
+        managers = GameObject.FindWithTag("ListsManager");
+        slotsManager = managers.GetComponent<SlotsManager>();
+        cardsManager = managers.GetComponent<CardsManager>();
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -19,14 +26,14 @@ public class Slot : MonoBehaviour, IDropHandler
 
         //card animation
         //set move by card dragged
-        moveSelected = danceMoveDropped.type;
+        cardSelectedIndex = eventData.pointerDrag.GetComponent<DanceMoveCard>().positionInList;
         DebugCardSelected(danceMoveDropped.DebugNumber);
 
         //hide card dragged
+        eventData.pointerDrag.GetComponent<DanceMoveCard>().SetCardVisibility(false);
+        eventData.pointerDrag.GetComponent<DanceMoveCard>().ResetCardPosition();
 
-        Debug.Log("Dropped in slot");
-        eventData.pointerDrag.transform.position = transform.position;
-        eventData.pointerDrag.GetComponent<CanvasGroup>().alpha = 0f;
+        slotsManager.CheckIfAllSlotsFilled();
     }
 
 
@@ -38,12 +45,31 @@ public class Slot : MonoBehaviour, IDropHandler
     void ResetCardDisplay()
     {
         //Debug with normal text
-        if (moveSelected == null) transform.GetChild(0).GetComponent<Text>().text = "";
+        if (cardSelectedIndex == -1) transform.GetChild(0).GetComponent<Text>().text = "";
         else
         {
-            transform.GetChild(0).GetComponent<Text>().text = (((int)moveSelected)+1).ToString();
+            transform.GetChild(0).GetComponent<Text>().text = cardsManager.cardsList[cardSelectedIndex].move.DebugNumber.ToString();
         }
 
         //Game
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (cardSelectedIndex != -1)
+        {
+            //Debug.Log("OnPointerDown in Slot");
+            
+
+            //show card
+            cardsManager.cardsList[cardSelectedIndex].SetCardVisibility(true);
+            cardsManager.cardsList[cardSelectedIndex].ResetCard(); //maybe not needed
+
+            //reset slot
+            cardSelectedIndex = -1;
+            ResetCardDisplay();
+            slotsManager.CheckIfAllSlotsFilled();
+
+        }
     }
 }
