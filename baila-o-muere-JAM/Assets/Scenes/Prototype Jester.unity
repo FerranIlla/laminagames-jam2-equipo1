@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f9dcb871eb3ff41a9336181436cdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  queenText: {fileID: 551886946}
+  queenFeedbackScript: {fileID: 551886948}
 --- !u!1001 &263911778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1140,6 +1140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 551886947}
+  - component: {fileID: 551886948}
   m_Layer: 5
   m_Name: Queen's feedback
   m_TagString: Untagged
@@ -1168,6 +1169,18 @@ RectTransform:
   m_AnchoredPosition: {x: -392, y: 246}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &551886948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551886946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 877c32066b7daf1498fbf4df5b173362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &558187641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2540,7 +2553,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 63.3
+  field of view: 66
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2584,6 +2597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c172568739565644d8b4bc342024ced7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomSpeed: 1
 --- !u!1 &996451611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,7 +2823,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 261342874}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StartDancing
+        m_MethodName: SubmitAnswer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4720,7 +4734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1652345830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4738,7 +4752,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 352, y: 558.2}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1652345831
