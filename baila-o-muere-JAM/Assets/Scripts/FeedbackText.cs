@@ -47,7 +47,7 @@ public class FeedbackText : MonoBehaviour
                     generateSentence = "Too bad! Only * moves of your performance satisfied me.\n\nGoodbye...";
                     break;
                 case 2:
-                    generateSentence = "I liked * out of 5 of your moves. And that's not enough!";
+                    generateSentence = "I liked * out of 5 of your moves.\n\nAnd that's not enough!";
                     break;
                 case 3:
                     generateSentence = "Not even close! * moves out of 5.\n\nTry a little harder...";
