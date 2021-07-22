@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    static public AudioSource menuMusicSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        menuMusicSource = AudioManager.instance.PlaySoundGetReference("MenuMusic");
     }
 
     // Update is called once per frame
@@ -17,7 +19,9 @@ public class UIController : MonoBehaviour
     }
 
     public static void Escena (string Nombredelaescena){
+        menuMusicSource.Stop();
         Application.LoadLevel(Nombredelaescena);
+        
 
     }
 

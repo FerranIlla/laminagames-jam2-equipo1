@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     [SerializeField] private Historic historic;
 
+    
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -31,6 +33,10 @@ public class GameManager : MonoBehaviour
 
         GenerateRandomPasswordWithoutRepeating(5);
         Debug.Log(PrintPassword());
+
+        //start song
+        AudioManager.instance.PlayGameplayMusic("GameplayMusic");
+        AudioManager.instance.gameplayMusicSource.volume = AudioManager.instance.musicMinVolume;
     }
 
     // Update is called once per frame
@@ -106,6 +112,7 @@ public class GameManager : MonoBehaviour
 
         //StartCoroutine(SimulateDanceAnimations());
         jestersManager.MakeJesterDance(GetCurrentCombination());
+        AudioManager.instance.ZoomIn();
     }
 
     IEnumerator SimulateDanceAnimations()
@@ -144,6 +151,7 @@ public class GameManager : MonoBehaviour
     //call after dance animation ends
     public void ShowFeedbackText()
     {
+        AudioManager.instance.ZoomOut();
         cameraAnim.ZoomOut(); //zoom out camera to default
 
         List<DanceMoveTypes> currentCombination;
@@ -157,17 +165,20 @@ public class GameManager : MonoBehaviour
         {
             //Debug.Log("Correct");
             winPanel.SetActive(true);
+            AudioManager.instance.PlaySound("RightCombination");
         }
         else
         {
-            //Debug.Log("Wrong");
+            
             slotsManager.ResetAllSlots();
             jestersManager.KillCandidate(); //tries -1
 
 
             if(tries <= 0)
             {
+                //Debug.Log("Wrong");
                 losePanel.SetActive(true);
+                AudioManager.instance.PlaySound("WrongCombination");
             }
         }
 

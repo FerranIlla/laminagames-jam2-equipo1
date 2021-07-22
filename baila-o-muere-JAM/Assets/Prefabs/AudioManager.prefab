@@ -43,4 +43,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f25ce081af92f45802b549dd1eadb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 369235450d0b8b74d93310534871824b, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: GameplayMusic
+    clip: {fileID: 8300000, guid: 7419890614405174aabff0536385c770, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: RightCombination
+    clip: {fileID: 8300000, guid: 61a04838843ebfb4598edd1ad49937fd, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: WrongCombination
+    clip: {fileID: 8300000, guid: a259105edb168f74abdc217081d4bd34, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  gameplayMusicSource: {fileID: 0}
+  musicMinVolume: 0.15
+  musicMaxVolume: 0.35
