@@ -613,8 +613,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dance!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a1ec7b7cabb7e6348bc4020bca6a8b73, type: 2}
-  m_sharedMaterial: {fileID: -4609698638008949952, guid: a1ec7b7cabb7e6348bc4020bca6a8b73, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b169d8059acbd3844be67610ef536db3, type: 2}
+  m_sharedMaterial: {fileID: -1054303096563244544, guid: b169d8059acbd3844be67610ef536db3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2504,7 +2504,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: You entertained the queen successfully. You win.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b169d8059acbd3844be67610ef536db3, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2568,7 +2568,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &407757708
@@ -9320,7 +9320,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: No more jesters to satisfy the queen. You lose.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b169d8059acbd3844be67610ef536db3, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -9384,7 +9384,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1930296500
@@ -9615,7 +9615,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -21.9, y: 15.8}
   m_SizeDelta: {x: 586.9, y: 208.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1990481502
@@ -9642,8 +9642,8 @@ MonoBehaviour:
 
     Bad luck... NEXT!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a1ec7b7cabb7e6348bc4020bca6a8b73, type: 2}
-  m_sharedMaterial: {fileID: -4609698638008949952, guid: a1ec7b7cabb7e6348bc4020bca6a8b73, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b169d8059acbd3844be67610ef536db3, type: 2}
+  m_sharedMaterial: {fileID: -1054303096563244544, guid: b169d8059acbd3844be67610ef536db3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
