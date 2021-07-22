@@ -102,7 +102,10 @@ public class GameManager : MonoBehaviour
         slotsManager.danceButton.gameObject.SetActive(false);
         //zoom in camera
         cameraAnim.ZoomIn();
-        StartCoroutine(SimulateDanceAnimations());
+
+
+        //StartCoroutine(SimulateDanceAnimations());
+        jestersManager.MakeJesterDance(GetCurrentCombination());
     }
 
     IEnumerator SimulateDanceAnimations()
@@ -110,6 +113,18 @@ public class GameManager : MonoBehaviour
         Debug.Log("Jester is dancing!");
         yield return new WaitForSeconds(5);
         ShowFeedbackText();
+    }
+
+    private List<DanceMoveTypes> GetCurrentCombination()
+    {
+        List<DanceMoveTypes> currentCombination = new List<DanceMoveTypes>();
+        for (int i = 0; i < slotsManager.slotsList.Count; ++i)
+        {
+            DanceMoveTypes slotResult = cardsManager.cardsList[slotsManager.slotsList[i].cardSelectedIndex].move.type;
+            currentCombination.Add(slotResult);
+        }
+
+        return currentCombination;
     }
 
     private int TestPassword(out List<DanceMoveTypes> combination)
@@ -127,7 +142,7 @@ public class GameManager : MonoBehaviour
     }
 
     //call after dance animation ends
-    private void ShowFeedbackText()
+    public void ShowFeedbackText()
     {
         cameraAnim.ZoomOut(); //zoom out camera to default
 

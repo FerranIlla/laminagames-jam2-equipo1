@@ -74,6 +74,8 @@ public class JestersManager : MonoBehaviour
     {
         if (jester != null)
         {
+            jester.GetComponent<Animator>().SetTrigger("Walk");
+            jester.LookAt(jesterSpotlight.position);
             Vector3 initialPos = jester.position;
             float t = 0f;
             float animationDurationInSeconds = 1f;
@@ -86,8 +88,59 @@ public class JestersManager : MonoBehaviour
                 yield return null;
             }
             //Debug.Log("Next jester is on spotlight");
+            jester.LookAt(jester.position + Vector3.forward);
+            jester.GetComponent<Animator>().SetTrigger("Idle");
         }
     }
 
+    public void MakeJesterDance(List<DanceMoveTypes> combination)
+    {
+        StartCoroutine(TriggerNextDanceMoveAnimation(combination));
+    }
 
+    private void TriggerDanceMoveAnimation(Transform jester, DanceMoveTypes type)
+    {
+        jester.GetComponent<Animator>().SetTrigger(DanceMoveTypeToAnimationTrigger(type));
+    }
+
+    private string DanceMoveTypeToAnimationTrigger(DanceMoveTypes type)
+    {
+        string triggerName;
+        switch (type)
+        {
+            case DanceMoveTypes._1:
+                triggerName = "Squat";
+                break;
+            case DanceMoveTypes._2:
+                triggerName = "Saturday";
+                break;
+            case DanceMoveTypes._3:
+                triggerName = "Feet";
+                break;
+            case DanceMoveTypes._4:
+                triggerName = "Backflip";
+                break;
+            case DanceMoveTypes._5:
+                triggerName = "Arms";
+                break;
+            default:
+                triggerName = "Idle";
+                break;
+        }
+        return triggerName;
+    }
+
+    IEnumerator TriggerNextDanceMoveAnimation(List<DanceMoveTypes> combination)
+    {
+        if (jesterCandidate != null)
+        {
+            for (int i = 0; i < combination.Count; i++)
+            {
+                TriggerDanceMoveAnimation(jesterCandidate, combination[i]);
+                yield return new WaitForSeconds(2f);
+            }
+            jesterCandidate.GetComponent<Animator>().SetTrigger("Idle");
+        }
+        transform.GetComponent<GameManager>().ShowFeedbackText();
+    }
 }
