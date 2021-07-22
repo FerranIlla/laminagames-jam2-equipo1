@@ -7,10 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Metal 1
+  m_Name: CarpetRender
   m_Shader: {fileID: 4800000, guid: ef3178aabaab247448c46c904e37bf43, type: 3}
-  m_ShaderKeywords: TCP2_RAMP_CRISP TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING TCP2_RIM_LIGHTING_LIGHTMASK
-    TCP2_UV_NORMALS_FULL
+  m_ShaderKeywords: TCP2_OCCLUSION TCP2_RAMP_CRISP TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING
+    TCP2_RIM_LIGHTING_LIGHTMASK TCP2_SPECULAR TCP2_UV_NORMALS_FULL _METALLICGLOSSMAP
+    _NORMALMAP _PARALLAXMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -21,12 +22,12 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: f732b42c1c6fb16489e2b446636e560c, type: 3}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 9676012c53793a740a03cfb4962854e1, type: 3}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
@@ -45,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b9843bd9257bdda4aa80eafd230651c3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCapMask:
@@ -57,15 +58,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9b8d07c8ce037194e807b3bf4514508c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 73f2e82553c03224c98783aaa3cb76c5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: f2b78b529b716bc4c8c48b3cbb634da2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ramp:
@@ -105,7 +106,7 @@ Material:
     - _Mode: 0
     - _NormalsSource: 0
     - _NormalsUVType: 0
-    - _OcclusionChannel: 0
+    - _OcclusionChannel: 1
     - _OcclusionStrength: 1
     - _OutlineLightingType: 0
     - _OutlineLightingTypeURP: 0
@@ -120,7 +121,7 @@ Material:
     - _RampOffset: 0
     - _RampScale: 1
     - _RampSmoothing: 0.1
-    - _RampThreshold: 0.55
+    - _RampThreshold: 0.75
     - _RampType: 1
     - _ReceiveShadowsOff: 1
     - _ReflectionMapType: 0
@@ -144,24 +145,24 @@ Material:
     - _UseMatCap: 0
     - _UseMatCapMask: 0
     - _UseMobileMode: 0
-    - _UseNormalMap: 0
-    - _UseOcclusion: 0
+    - _UseNormalMap: 1
+    - _UseOcclusion: 1
     - _UseOutline: 1
     - _UseReflections: 0
     - _UseRim: 1
     - _UseRimLightMask: 1
     - _UseShadowTexture: 0
-    - _UseSpecular: 0
+    - _UseSpecular: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.44713423, g: 0.572253, b: 0.6037736, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HColor: {r: 0.9716981, g: 0.82961017, b: 0.82961017, a: 1}
+    - _HColor: {r: 0.990566, g: 0.85506403, b: 0.85506403, a: 1}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.5}
-    - _SColor: {r: 0.09385013, g: 0.10328331, b: 0.1792453, a: 1}
+    - _SColor: {r: 0.103729084, g: 0.11273154, b: 0.1981132, a: 1}
     - _SpecularColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
   m_BuildTextureStacks: []
