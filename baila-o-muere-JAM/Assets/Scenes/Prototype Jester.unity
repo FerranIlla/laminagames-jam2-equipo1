@@ -1759,11 +1759,11 @@ MonoBehaviour:
   elementPrefab: {fileID: 9158182361552151709, guid: dc2763489b1873844ba3782f7574b10c, type: 3}
   elementsParent: {fileID: 1381313402}
   cardsImages:
-  - {fileID: 21300000, guid: 0c349bf8022b9c048a952ae85ec2d530, type: 3}
-  - {fileID: 21300000, guid: 638d77b697fc65d4eaa08698a790177f, type: 3}
-  - {fileID: 21300000, guid: ae0f93dfc246b1d4884103294a633173, type: 3}
-  - {fileID: 21300000, guid: e18fa4073d463964fb2ef2553ae4a254, type: 3}
-  - {fileID: 21300000, guid: bd0ee94fac6f9eb4c94015bdfba25eb8, type: 3}
+  - {fileID: 21300000, guid: 81585dbcf5796eb4aa5562477dd48993, type: 3}
+  - {fileID: 21300000, guid: 6cb507d5b557e384a921fd9ce1f73382, type: 3}
+  - {fileID: 21300000, guid: ddfbcff6279845b4ab26ed5eef23c05b, type: 3}
+  - {fileID: 21300000, guid: 95f06c8c23b0cad449e5352ae4f13654, type: 3}
+  - {fileID: 21300000, guid: ad42076dfffbe934c8382071238b1fed, type: 3}
 --- !u!4 &307969546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8938275119179214944, guid: 2ab605ef335fa9a4ea7dd1086c114bc7, type: 3}
@@ -9958,8 +9958,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37
-  m_fontSizeBase: 37
+  m_fontSize: 34.6
+  m_fontSizeBase: 34.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
