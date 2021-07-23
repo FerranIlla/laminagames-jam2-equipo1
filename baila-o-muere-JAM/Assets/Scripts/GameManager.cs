@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     [SerializeField] private Historic historic;
 
-    
+    [SerializeField] private Image fadePanel;
+
+
 
     // Start is called before the first frame update
     void Awake()
@@ -164,8 +167,10 @@ public class GameManager : MonoBehaviour
         if (correctAnswers == password.Count)
         {
             //Debug.Log("Correct");
-            winPanel.SetActive(true);
+            //winPanel.SetActive(true);
+
             AudioManager.instance.PlaySound("RightCombination");
+            StartCoroutine(FadeOutAndChangeScene("UI_Win"));
         }
         else
         {
@@ -177,12 +182,26 @@ public class GameManager : MonoBehaviour
             if(tries <= 0)
             {
                 //Debug.Log("Wrong");
-                losePanel.SetActive(true);
+                //losePanel.SetActive(true);
                 AudioManager.instance.PlaySound("WrongCombination");
+                StartCoroutine(FadeOutAndChangeScene("UI_Lost"));
             }
         }
+        
 
+    }
 
+    IEnumerator FadeOutAndChangeScene(string sceneName)
+    {
+        yield return new WaitForSeconds(2f);
+        float t = 0;
+        while (t < 1f)
+        {
+            t += Time.deltaTime;
+            fadePanel.color = new Color(fadePanel.color.r, fadePanel.color.g, fadePanel.color.b, t);
+            yield return null;
+        }
+        SceneManager.LoadScene(sceneName);
     }
 
     public void CloseGame()

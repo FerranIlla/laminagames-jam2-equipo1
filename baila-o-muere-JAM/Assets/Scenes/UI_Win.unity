@@ -4294,6 +4294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jester Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6486845877799991044, guid: 2ab605ef335fa9a4ea7dd1086c114bc7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5c289b86e11e4be40b095d1f3ad26438, type: 2}
     - target: {fileID: 8938275119179214944, guid: 2ab605ef335fa9a4ea7dd1086c114bc7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -12179,7 +12183,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.1
+  m_fontSize: 26.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12475,7 +12479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.35125002, y: 0.5}
   m_AnchorMax: {x: 0.64875007, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: 3.4579964}
+  m_AnchoredPosition: {x: -0.000015258789, y: 3.4579926}
   m_SizeDelta: {x: 1.5390015, y: -6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8670201091477446253

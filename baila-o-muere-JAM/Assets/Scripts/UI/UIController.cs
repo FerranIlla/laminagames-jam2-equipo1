@@ -33,6 +33,7 @@ public class UIController : MonoBehaviour
     }
 
     public static void Salir(){
+        Debug.Log("salir");
          Application.Quit();
     } 
 }
