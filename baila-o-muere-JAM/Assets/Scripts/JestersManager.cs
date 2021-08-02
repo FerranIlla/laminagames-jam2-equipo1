@@ -15,6 +15,8 @@ public class JestersManager : MonoBehaviour
     {
         FillJestersList();
         GetComponent<GameManager>().tries = jestersList.Count;
+        MakeEveryJesterHaveDifferentAnimationOffsets(); 
+
     }
 
     // Update is called once per frame
@@ -30,6 +32,18 @@ public class JestersManager : MonoBehaviour
             jestersList.Add(child);
         }
         jesterCandidate = jestersList[0];
+    }
+
+
+    void MakeEveryJesterHaveDifferentAnimationOffsets()
+    {
+        if (jestersList.Count <= 0) return;
+
+        //set different cycle offsets for every jester
+        foreach (Transform jester in jestersList)
+        {
+            jester.GetComponent<Animator>().SetFloat("Offset", Random.Range(0f, 1f));
+        }
     }
 
     public void KillCandidate()
