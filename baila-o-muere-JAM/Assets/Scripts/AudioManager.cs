@@ -71,6 +71,7 @@ public class AudioManager : MonoBehaviour
 
         s.source.Play();
         gameplayMusicSource = s.source;
+        gameplayMusicSource.loop = true;
     }
 
 

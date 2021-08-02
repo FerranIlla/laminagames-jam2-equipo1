@@ -8968,6 +8968,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotsParent: {fileID: 1461280859}
   slotsList: []
+  cardSprites:
+  - {fileID: 21300000, guid: d60906ace15eb8d4681eab6d9d0cd8b0, type: 3}
+  - {fileID: 21300000, guid: eed9357aaa3155043b2d41a8c1116ade, type: 3}
+  - {fileID: 21300000, guid: fe474d87ec412b1448f88ca80d83fa8c, type: 3}
+  - {fileID: 21300000, guid: b6d2b30846540e94a94651d396272a6b, type: 3}
+  - {fileID: 21300000, guid: 4f850793716cb8b49ae3816512829fa1, type: 3}
   danceButton: {fileID: 1186993812}
 --- !u!4 &1722724785
 Transform:

@@ -10,6 +10,7 @@ public class SlotsManager : MonoBehaviour
     [HideInInspector] public List<Slot> slotsList = new List<Slot>();
 
     [HideInInspector] private CardsManager cardsManager;
+    public List<Sprite> cardSprites = new List<Sprite>();
 
     public Button danceButton;
 

@@ -29,7 +29,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerDownHandler
             //card animation
             //set move by card dragged
             cardSelectedIndex = eventData.pointerDrag.GetComponent<DanceMoveCard>().positionInList;
-            DebugCardSelected(danceMoveDropped.DebugNumber);
+            ShowCardSelectedInSlot(danceMoveDropped.DebugNumber);
 
             //hide card dragged
             eventData.pointerDrag.GetComponent<DanceMoveCard>().SetCardVisibility(false);
@@ -40,21 +40,42 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerDownHandler
     }
 
 
-    void DebugCardSelected(int numberToShow)
+    void ShowCardSelectedInSlot(int numberToShow)
     {
-        transform.GetChild(2).GetComponent<Text>().text = numberToShow.ToString();
+        //show number - debug
+        transform.GetChild(2).GetChild(1).GetComponent<Text>().text = numberToShow.ToString();
+
+        //set and show card
+        Image cardInSlot = transform.GetChild(2).GetChild(0).GetComponent<Image>();
+        cardInSlot.enabled = true;
+        cardInSlot.sprite = slotsManager.cardSprites[numberToShow - 1];
+
+        //hide empty slot
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(false);
+
     }
 
     void ResetCardDisplay()
     {
         //Debug with normal text
-        if (cardSelectedIndex == -1) transform.GetChild(2).GetComponent<Text>().text = "";
+        if (cardSelectedIndex == -1)
+        {
+            //text
+            transform.GetChild(2).GetChild(1).GetComponent<Text>().text = "";
+
+            //hide card in slot
+            transform.GetChild(2).GetChild(0).GetComponent<Image>().enabled = false;
+
+            //show slot
+            transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(true);
+        }
         else
         {
-            transform.GetChild(2).GetComponent<Text>().text = cardsManager.cardsList[cardSelectedIndex].move.DebugNumber.ToString();
+            //should be never here
+            transform.GetChild(2).GetChild(1).GetComponent<Text>().text = cardsManager.cardsList[cardSelectedIndex].move.DebugNumber.ToString();
         }
-
-        //Game
     }
 
     public void OnPointerDown(PointerEventData eventData)

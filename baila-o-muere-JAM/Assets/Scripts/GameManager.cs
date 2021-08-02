@@ -169,6 +169,7 @@ public class GameManager : MonoBehaviour
             //Debug.Log("Correct");
             //winPanel.SetActive(true);
 
+            AudioManager.instance.gameplayMusicSource.Stop();
             AudioManager.instance.PlaySound("RightCombination");
             StartCoroutine(FadeOutAndChangeScene("UI_Win"));
         }
